@@ -32,7 +32,7 @@ class Messenger(object):
 
     def write_prompt(self, channel_id, user_id):
         bot_uid = self.clients.bot_user_id()
-        txtsub  = "I'm sorry, I didn't quite understand... Please kill yourself"
+        txtsub  = ["I'm sorry, I didn't quite understand... Please kill yourself"]
         txt = '{}, <@{}>!'.format(random.choice(txtsub), user_id)
         self.send_message(channel_id, txt)
 
