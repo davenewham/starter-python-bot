@@ -19,7 +19,7 @@ class RtmEventHandler(object):
         # See https://api.slack.com/rtm for a full list of events
         if event_type == 'error':
             # error
-            self.msg_writer.write_error(event['channel'],event['user'], json.dumps(event))
+            self.msg_writer.write_error(event['channel'], json.dumps(event))
         elif event_type == 'message':
             # message was sent to channel
             self._handle_message(event)
@@ -46,8 +46,6 @@ class RtmEventHandler(object):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
                 elif 'joke' in msg_txt:
                     self.msg_writer.write_joke(event['channel'])
-                elif 'kill yourself' in msg_text:
-                    self.msg+writer.write_killyourself(event['channel'], event['user'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
                 else:
