@@ -30,9 +30,10 @@ class Messenger(object):
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
-    def write_prompt(self, channel_id):
+    def write_prompt(self, channel_id, user_id):
         bot_uid = self.clients.bot_user_id()
-        txt = "I'm sorry, I didn't quite understand... Can I help you? (e.g. `<@" + bot_uid + "> help`)"
+        txtsub  = "I'm sorry, I didn't quite understand... Please kill yourself"
+        txt = '{}, <@{}>!'.format(random.choice(txtsub), user_id)
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
