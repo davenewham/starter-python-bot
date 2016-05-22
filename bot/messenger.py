@@ -24,7 +24,12 @@ class Messenger(object):
             "> `<@" + bot_uid + "> joke` - I'll tell you one of my finest jokes, with a typing pause for effect. :laughing:",
             "> `<@" + bot_uid + "> attachment` - I'll demo a post with an attachment using the Web API. :paperclip:")
         self.send_message(channel_id, txt)
-
+    
+    def killyourself(self, channel_id, user_id):
+        main = ['I will gladly kill myself']
+        txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
+        self.send_message(channel_id, txt)
+    
     def write_greeting(self, channel_id, user_id):
         greetings = ['You are a dirty whore']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
