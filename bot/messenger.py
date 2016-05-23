@@ -59,3 +59,16 @@ class Messenger(object):
             "color": "#7CD197",
         }
         self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
+
+    def latex_equation(self, channel_id, msg_txt):
+        if msg_txt.count(msg_txt) != 2:
+            return
+
+        eqn = msg_txt.split('$', 2)[1]
+        parsed = urllib.parse.quote(eqn)
+        url = 'https://latex.codecogs.com/gif.latex?' + parsed
+
+        attachment = {
+            "image_url": url,
+        }
+        self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
