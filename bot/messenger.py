@@ -36,10 +36,10 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
-        question = "Why did the python cross the road?"
+        question = "What did God say when he made the first black man?" 
         self.send_message(channel_id, question)
         self.clients.send_user_typing_pause(channel_id)
-        answer = "To eat the chicken on the other side! :laughing:"
+        answer = "Damn, I burnt one. :laughing:"
         self.send_message(channel_id, answer)
 
 
