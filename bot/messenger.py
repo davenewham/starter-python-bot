@@ -61,8 +61,8 @@ class Messenger(object):
         self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
 
     def latex_equation(self, channel_id, msg_txt):
-        if msg_txt.count(msg_txt) != 2:
-            return
+        #if msg_txt.count(msg_txt) != 2:
+        #    return
 
         eqn = msg_txt.split('$', 2)[1]
         parsed = urllib.parse.quote(eqn)
@@ -71,4 +71,4 @@ class Messenger(object):
         attachment = {
             "image_url": url,
         }
-        self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
+        self.clients.web.chat.post_message(channel_id, msg_txt, attachments=[attachment], as_user='true')
