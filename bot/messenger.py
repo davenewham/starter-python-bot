@@ -73,3 +73,12 @@ class Messenger(object):
             "image_url": url,
         }
         self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
+    
+    def kys(self, channel_id):
+        bot_uid = self.clients.bot_user_id()
+        kick = "/remove <@" + bot_uid + ">"
+        self.send_message(channel_id, "Goodbuy world, you have been a filthy whore.")
+        self.clients.send_user_typing_pause(channel_id)
+        self.clients.send_user_typing_pause(channel_id)
+        self.send_message(channel_id, kick)
+        
