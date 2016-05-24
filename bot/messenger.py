@@ -43,8 +43,6 @@ class Messenger(object):
          self.clients.send_user_typing_pause(channel_id)
          self.send_message(channel_id, joke_list[rand][1])
          
-
-
     def write_error(self, channel_id, err_msg):
         txt = ":face_with_head_bandage: my maker didn't handle this error very well:\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
