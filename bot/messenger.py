@@ -1,5 +1,10 @@
 import logging
 import random
+<<<<<<< HEAD
+import urllib.parse
+=======
+import urllib
+>>>>>>> origin/master
 
 logger = logging.getLogger(__name__)
 
