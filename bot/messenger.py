@@ -37,11 +37,13 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
-        question = "What did God say when he made the first black man?" 
-        self.send_message(channel_id, question)
+        questions = ["What did God say when he made the first black man?", "What\'s worse than finding a worm in your apple?", "How do you make a plumber cry?", "How do you make a cat go woof?", "What\'s sad about 4 people and a Mercedes driving off a cliff?", "Why is television called a medium?"]
+        answers = ["Damn, I burnt one. :laughing:", "The Holocaust.", "Kill his family.", "Pour gasoline all over it and light a match.", "They were my friends.", "Because it is neither rare nor well done"]
+        rand = random.randrange(6)
+        
+        self.send_message(channel_id, questions[rand])
         self.clients.send_user_typing_pause(channel_id)
-        answer = "Damn, I burnt one. :laughing:"
-        self.send_message(channel_id, answer)
+        self.send_message(channel_id, answers[rand])
 
 
     def write_error(self, channel_id, err_msg):
