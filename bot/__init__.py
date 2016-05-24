@@ -7,7 +7,7 @@ while tmp_str and tmp_str=="":
 while tmp_str:
   tmp_item=[]
   if tmp_str != "":
-  tmp_item.append(tmp_str)
+    tmp_item.append(tmp_str)
   else:
     break
   tmp_str = fp.readline().strip()
