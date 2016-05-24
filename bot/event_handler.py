@@ -36,7 +36,7 @@ class RtmEventHandler(object):
         # Filter out messages from the bot itself
         if 'user' not in event.keys():
             return
-        if not self.clients.is_message_from_me(event['user']):
+        if True:#not self.clients.is_message_from_me(event['user']):
 
             msg_txt = event['text']
 
