@@ -2,7 +2,7 @@ import os.path
 fp = open('./resources/Jokes.txt', 'r')
 tmp_str=fp.readline()
 global joke_list 
-joke_list = []
+joke_list = ["for testing purposes!"]
 while tmp_str and tmp_str!='\n' and tmp_str!= '\r':
   tmp_str = fp.readline()
 if(tmp_str):
