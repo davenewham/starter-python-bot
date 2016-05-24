@@ -81,5 +81,5 @@ class Messenger(object):
         self.clients.send_user_typing_pause(channel_id)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, kick)
-        self.clients.web.channel.leave(channel_id)
+        self.clients.web.channels.leave(channel_id)
         
