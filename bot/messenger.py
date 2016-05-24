@@ -62,7 +62,7 @@ class Messenger(object):
 
     def latex_equation(self, channel_id, msg_txt):
         if msg_txt.count('$') != 2:
-            self.send_message(channel_id, "You're doing it wrong, retard. It's \"latex $[equation]$\" u litle cuck.")
+            self.send_message(channel_id, "You're doing it wrong, little cuck.")
             return
 
         eqn = msg_txt.split('$', 2)[1]
