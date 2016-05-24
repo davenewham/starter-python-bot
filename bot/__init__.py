@@ -1,5 +1,5 @@
 import os.path
-fp = open(os.path.dirname(__file__) + '/../resources/jokes.txt', 'r')
+fp = open('./resources/jokes.txt', 'r')
 tmp_str=fp.readline()
 global joke_list 
 joke_list = []
