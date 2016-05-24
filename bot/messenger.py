@@ -76,9 +76,10 @@ class Messenger(object):
     
     def kys(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        kick = "/remove <@" + bot_uid + ">"
-        self.send_message(channel_id, "Goodbuy world, you have been a filthy whore.")
+        kick = "/kys <@" + bot_uid + ">"
+        self.send_message(channel_id, "goodbuy world, you have been a filthy whore.")
         self.clients.send_user_typing_pause(channel_id)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, kick)
+        self.clients.web.channel.leave(channel_id)
         
