@@ -63,8 +63,8 @@ class Messenger(object):
         self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
 
     def latex_equation(self, channel_id, msg_txt):
-        if msg_txt.count(msg_txt) != 2:
-            return
+        #if msg_txt.count(msg_txt) != 2:
+        #    return
 
         eqn = msg_txt.split('$', 2)[1]
         parsed = urllib.quote(eqn)
