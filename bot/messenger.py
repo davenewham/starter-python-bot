@@ -37,7 +37,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
-        rand = random.randrange(joke_list.length())
+        rand = random.randrange(len(joke_list))
         self.send_message(channel_id, joke_list[rand[0]])
         if joke_list[rand[1]]:
          self.clients.send_user_typing_pause(channel_id)
