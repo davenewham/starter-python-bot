@@ -1,6 +1,7 @@
 import logging
 import random
 import urllib
+from urlparse import urlparse
 
 logger = logging.getLogger(__name__)
 
