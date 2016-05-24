@@ -1,7 +1,7 @@
 import logging
 import random
 import urllib
-
+from __init__ import joke_list
 logger = logging.getLogger(__name__)
 
 
