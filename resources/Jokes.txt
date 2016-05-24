@@ -17,4 +17,4 @@ Why is television called a medium?
 Because it is neither rare nor well done
 
 What do you get when you mix joke with a recursive function? 
-<@spagbot>: tell me a joke!
+<@spagbot>: joke
