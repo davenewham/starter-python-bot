@@ -15,4 +15,4 @@ while tmp_str:
    if tmp_str!= ""
      tmp_item.append(tmp_str)
    joke_list.append(tmp_item)
-   tmp_str = fp.readline()
+   tmp_str = fp.readline().strip()
