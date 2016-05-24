@@ -1,6 +1,6 @@
 import os.path
 fp = open('./resources/Jokes.txt', 'r')
-tmp_str=fp.readline()
+tmp_str=fp.readline().strip()
 global joke_list 
 joke_list = []
 while tmp_str and tmp_str=="":
