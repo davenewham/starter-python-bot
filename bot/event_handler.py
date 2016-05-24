@@ -34,7 +34,9 @@ class RtmEventHandler(object):
 
     def _handle_message(self, event):
         # Filter out messages from the bot itself
-        if not self.clients.is_message_from_me(event['user']):
+        #if not self.clients.is_message_from_me(event['user']):
+        #fix this in summer!
+        if True:
 
             msg_txt = event['text']
 
@@ -42,13 +44,13 @@ class RtmEventHandler(object):
                 # e.g. user typed: "@pybot tell me a joke!"
                 if 'help' in msg_txt:
                     self.msg_writer.write_help_message(event['channel'])
+                elif 'latex' in msg_txt:
+                    self.msg_writer.latex_equation(event['channel'], msg_txt)
                 elif re.search('hi|hey|hello|howdy', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
                 elif 'joke' in msg_txt:
                     self.msg_writer.write_joke(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
-                elif 'latex' in msg_txt:
-                    self.msg_writer.latex_equation(event['channel'], msg_txt)
                 else:
                     self.msg_writer.write_prompt(event['channel'])

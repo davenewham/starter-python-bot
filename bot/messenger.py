@@ -1,7 +1,6 @@
 import logging
 import random
 import urllib
-from urlparse import urlparse
 
 logger = logging.getLogger(__name__)
 
@@ -58,13 +57,13 @@ class Messenger(object):
             "text": txt,
             "fallback": txt,
             "image_url": "https://storage.googleapis.com/beepboophq/_assets/bot-1.22f6fb.png",
-            "color": "#7CD197",
         }
-        self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
+        self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
 
     def latex_equation(self, channel_id, msg_txt):
-        #if msg_txt.count(msg_txt) != 2:
-        #    return
+        if msg_txt.count('$') != 2:
+            self.send_message(channel_id, "You're doing it wrong, retard. It's \"latex $[equation]$\" u litle cuck.")
+            return
 
         eqn = msg_txt.split('$', 2)[1]
         parsed = urllib.quote(eqn)
