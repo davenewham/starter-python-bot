@@ -72,6 +72,5 @@ class Messenger(object):
         attachment = {
             "fallback": "Latex equation",
             "image_url": url,
-            "color": "#36a64f",
         }
-        self.clients.web.chat.post_message(channel_id, msg_txt, attachments=[attachment], as_user='true')
+        self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
