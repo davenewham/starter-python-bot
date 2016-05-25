@@ -76,7 +76,8 @@ class Messenger(object):
         kick = "/kys <@" + bot_uid + ">"
         self.send_message(channel_id, "goodbuy world, you have been a filthy whore.")
         self.clients.send_user_typing_pause(channel_id)
-        self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, kick)
         self.clients.web.channels.kick(channel_id, bot_uid)
+        self.clients.send_user_typing_pause(channel_id)
+        self.send_message(channel_id, "fuck")
         
