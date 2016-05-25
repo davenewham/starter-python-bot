@@ -63,7 +63,7 @@ class Messenger(object):
         eqn = msg_txt.split('$', 2)[1]
         parsed = urllib.quote(eqn)
         #url = 'https://latex.codecogs.com/gif.latex?' + parsed
-        url = 'http://chart.googleapis.com/chart?cht=tx&chl='
+        url = 'http://chart.googleapis.com/chart?cht=tx&chl=' + parsed
     
         attachment = {
             "fallback": "Latex equation",
