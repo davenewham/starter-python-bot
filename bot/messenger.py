@@ -33,7 +33,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
-        rand = random.randrange(len(joke_list))
+        rand = random.randrange(0, len(joke_list))
         self.send_message(channel_id, joke_list[rand][0])
         # if joke_list[rand][1] == ' '
         #    txt = "test to see if this cuckery works"
