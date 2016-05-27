@@ -38,8 +38,8 @@ class RtmEventHandler(object):
             return
         if True:#not self.clients.is_message_from_me(event['user']):
             
-            mg_text_lower = msg_text.lower()
-            msg_txt = event['text']
+            
+            msg_txt = event['text'].lower()
             
             if self.clients.is_bot_mention(msg_txt):
                 # e.g. user typed: "@pybot tell me a joke!"
