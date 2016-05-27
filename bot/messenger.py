@@ -23,21 +23,32 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = ['You are a dirty whore']
+        greetings = ['Ay up, fgt! Got any dank memes?']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
     def write_prompt(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = "uhh well.. erm- im a fucking idiot. fist me."
+        txt = "uhh well.. erm - I'm a fucking idiot. Please don't hurt me."
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
-        rand = random.randrange(len(joke_list))
-        self.send_message(channel_id, joke_list[rand][0])
-        if joke_list[rand][1]:
+        rand = random.randrange(0, sum_p)
+        count_p=0
+        joke_index=0
+        for joke in joke_list:
+            count_p=count_p+joke[0]
+            if count_p > rand:
+                break
+            joke_index=joke_index+1
+        for i in range 1 to len(joke_list):
+            if i != joke_index:
+                joke_list[i]=floor(joke_list[i]*(1+exp(-1)))
+        joke_list[joke_index][0]= floor(joke_list[joke_index][0]-sqrt(joke_list[joke_index][0]))
+        self.send_message(channel_id, joke_list[joke_index][1])
+        if joke_list[joke_index][2]:
          self.clients.send_user_typing_pause(channel_id)
-         self.send_message(channel_id, joke_list[rand][1])
+         self.send_message(channel_id, joke_list[joke_index][2])
          
     def write_error(self, channel_id, err_msg):
         txt = "a fucking error! what a surprise:\n>```{}```".format(err_msg)
