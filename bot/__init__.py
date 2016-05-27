@@ -19,4 +19,4 @@ while tmp_str:
     fp.readline()
   joke_list.append(tmp_item)
   tmp_str = fp.readline().strip()
-sum_p=100*len(joke_list)                   	 #because all p values start as 100
+global sum_p=100*len(joke_list)                   	 #because all p values start as 100
