@@ -1,6 +1,8 @@
 import logging
 import random
 import urllib
+import math
+from math import *
 from __init__ import joke_list
 #from __init__ import sum_p
 logger = logging.getLogger(__name__)
