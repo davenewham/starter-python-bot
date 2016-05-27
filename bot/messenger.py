@@ -41,7 +41,7 @@ class Messenger(object):
             if count_p > rand:
                 break
             joke_index=joke_index+1
-        for i in range 1 to len(joke_list):
+        for i in range(1, len(joke_list))
             if i != joke_index:
                 joke_list[i]=floor(joke_list[i]*(1+exp(-1)))
         joke_list[joke_index][0]= floor(joke_list[joke_index][0]-sqrt(joke_list[joke_index][0]))
