@@ -37,6 +37,7 @@ class Messenger(object):
         sum_p=0
          for i in range(1, len(joke_list)):
             sum_p=sum_p+joke_list[0]
+            
         count_p=0
         joke_index=0
         rand = random.randrange(0, sum_p)
