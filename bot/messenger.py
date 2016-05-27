@@ -42,7 +42,7 @@ class Messenger(object):
                 break
             joke_index=joke_index+1
         sum_p=0
-        for i in range(1, len(joke_list))
+        for i in range(1, len(joke_list)):
             if i != joke_index:
                 joke_list[i]=floor(joke_list[i]*(1+exp(-1)))
             sum_p=sum_p+joke_list[0]
