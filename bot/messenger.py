@@ -34,12 +34,12 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
-        rand = random.randrange(0, sum_p)
         sum_p=0
          for i in range(1, len(joke_list)):
             sum_p=sum_p+joke_list[0]
         count_p=0
         joke_index=0
+        rand = random.randrange(0, sum_p)
         for joke in joke_list:
             count_p=count_p+joke[0]
             if count_p > rand:
