@@ -48,7 +48,7 @@ class RtmEventHandler(object):
                     self.msg_writer.latex_equation(event['channel'], msg_txt)
                 elif re.search('hi|hey|hello|howdy|cuck|gay', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
-                elif re.search(\W*(joke)\W* in msg_txt):
+                elif re.search('\W*(joke)\W*', in msg_txt):
                    self.msg_writer.write_joke(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
