@@ -37,7 +37,6 @@ class Messenger(object):
         sum_p=0
         for i in range(1, len(joke_list)):
             sum_p=sum_p+joke_list[i][0]
-            
         count_p=0
         joke_index=0
         rand = random.randrange(0, sum_p)
@@ -50,7 +49,6 @@ class Messenger(object):
         for i in range(1, len(joke_list)):
             if i != joke_index:
                 joke_list[i]=floor(joke_list[i]*(1+exp(-1)))
-            
         joke_list[joke_index][0]= floor(joke_list[joke_index][0]-sqrt(joke_list[joke_index][0]))
         self.send_message(channel_id, joke_list[joke_index][1])
         if len(joke_list[rand]) > 1:
