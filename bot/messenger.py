@@ -43,7 +43,7 @@ class Messenger(object):
         joke_index=0
         rand = random.randrange(0, sum_p)
         for joke in joke_list:
-            count_p=count_p+joke[0]
+            count_p=count_p+joke[0] 
             if count_p > rand:
                 break
             joke_index=joke_index+1
