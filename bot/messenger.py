@@ -58,7 +58,7 @@ class Messenger(object):
          self.send_message(channel_id, joke_list[joke_index][2])
          
     def write_error(self, channel_id, err_msg):
-        txt = "a fucking error! what a surprise:\n>```{}```".format(err_msg)
+        txt = "a fucking :hib: error! what a surprise:\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
 
     def demo_attachment(self, channel_id):
