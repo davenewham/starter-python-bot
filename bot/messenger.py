@@ -46,6 +46,7 @@ class Messenger(object):
             if i != joke_index:
                 joke_list[i]=floor(joke_list[i]*(1+exp(-1)))
             sum_p=sum_p+joke_list[0]
+            
         joke_list[joke_index][0]= floor(joke_list[joke_index][0]-sqrt(joke_list[joke_index][0]))
         self.send_message(channel_id, joke_list[joke_index][1])
         if len(joke_list[rand]) > 1:
