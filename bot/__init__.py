@@ -14,8 +14,12 @@ while tmp_str:
     break
   tmp_str = fp.readline().strip()
   if tmp_str!= "":
+<<<<<<< HEAD
     tmp_item.append(tmp_str)#p value element
+=======
+    tmp_item.append(tmp_str)
+    fp.readline()
+>>>>>>> a13b088175cb2f6048601d12360d0230c45846b4
   joke_list.append(tmp_item)
-  fp.readline()
   tmp_str = fp.readline().strip()
 sum_p=100*len(joke_list)                    #because all p values start as 100
