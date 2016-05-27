@@ -26,7 +26,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = ['Ay up, fgt! You better have some dank memes!']
+        greetings = ['Ay up, fgt! :pride: You better have some dank memes']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
