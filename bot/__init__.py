@@ -1,7 +1,7 @@
 fp = open('./resources/Jokes.txt', 'r')
 tmp_str=fp.readline().strip()
 global joke_list
-global sum_p
+global sum_p = 0
 joke_list = []
 
 while tmp_str and tmp_str=="":
