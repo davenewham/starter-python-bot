@@ -26,13 +26,13 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = ['Ay up, fgt! :pride: You better have some dank memes']
+        greetings = [':hib: Ay up, fgt! :pride: You better have some dank memes']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
     def write_prompt(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = "uhh well.. erm - I'm a fucking idiot. Please don't hurt me."
+        txt = "uhh well.. erm - I'm a fucking idiot. Please don't hurt me. :samurai:"
         self.send_message(channel_id, txt)
 
     def write_joke(self, channel_id):
@@ -75,7 +75,7 @@ class Messenger(object):
 
     def latex_equation(self, channel_id, msg_txt):
         if msg_txt.count('$') != 2:
-            self.send_message(channel_id, "You're doing it wrong, little cuck.")
+            self.send_message(channel_id, "You're doing it wrong, little cuck. :hib:")
             return
 
         eqn = msg_txt.split('$', 2)[1]
@@ -92,7 +92,7 @@ class Messenger(object):
     def kys(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         kick = "/kys <@" + bot_uid + ">"
-        self.send_message(channel_id, "goodbuy world, you have been a filthy whore.")
+        self.send_message(channel_id, ":solution: goodbuy world, you have been a filthy whore. :solution:")
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, kick)
         self.clients.web.channels.kick(channel_id, bot_uid)
