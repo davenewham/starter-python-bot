@@ -3,6 +3,7 @@ tmp_str=fp.readline().strip()
 global joke_list
 global sum_p
 joke_list = []
+
 while tmp_str and tmp_str=="":
   tmp_str = fp.readline().strip()
 while tmp_str:
