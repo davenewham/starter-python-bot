@@ -26,7 +26,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = [':hib:You stupid whore :hib: :solution:]
+        greetings = [':hib: Ay up, fgt! :pride: You better have some dank memes']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
@@ -50,8 +50,7 @@ class Messenger(object):
         sum_p=0 
         for i in range(1, len(joke_list)):
             if i != joke_index:
-                joke_list[i][0]=floor(joke_list[i][0]*(1+exp(-1))) % 1024
-                
+                joke_list[i][0]=floor(joke_list[i][0]*(1+exp(-1)))
         joke_list[joke_index][0]= floor(joke_list[joke_index][0]-2*sqrt(joke_list[joke_index][0]))
         self.send_message(channel_id, joke_list[joke_index][1])
         if len(joke_list[joke_index]) > 2:
@@ -99,4 +98,3 @@ class Messenger(object):
         self.clients.web.channels.kick(channel_id, bot_uid)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, "fuck")
-        
