@@ -1,7 +1,6 @@
 import logging
 import random
 import urllib
-import urllib.request
 import math
 import xml.sax
 import re
