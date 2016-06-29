@@ -36,7 +36,7 @@ class SlackBot(object):
         """
 
         logger.debug("Python Version: " + sys.version)
-        logger.debug('Starting bot for resource: {}'.format(resource))
+        logging.info('Starting bot for resource: {}'.format(resource))
         if 'resource' in resource and 'SlackBotAccessToken' in resource['resource']:
             res_access_token = resource['resource']['SlackBotAccessToken']
             self.clients = SlackClients(res_access_token)
