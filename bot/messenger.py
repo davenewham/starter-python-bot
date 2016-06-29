@@ -126,34 +126,36 @@ class Messenger(object):
 
         if Handler.interpretation != "":
             self.send_message(channel_id, Handler.interpretation)
-        attachment = {
-            "fallback": "Wolfram Alpha Response",
-            "image_url": Handler.data,
-        }
+
+        for key, value in Handler.iteritems():
+            self.send_message(channel_id, key)
+            attachment = {
+                "fallback": key,
+                "image_url": value,
+            }
         self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
 
 class WolframHandler( xml.sax.ContentHandler ):
     def __init__(self):
         self.CurrentData = ""
-        self.data = ""
+        self.data = {}
         self.rec = False
         
         self.interpretation = ""
         self.recInterpret = False
 
     def startElement(self, tag, attributes):
-        self.CurrentData = tag
         if tag == "pod":
+            self.CurrentData = attributes["title"]
             if attributes["title"] == "Input interpretation":
                 self.recInterpret = True
-            if "primary" in attributes.keys() and attributes["primary"] == "true":
-                self.rec = True
+            self.rec = true
         if tag == "img":
-            if self.rec:
-                self.data = attributes["src"]
-            elif self.recInterpret and "title" in attributes.keys():
+            if self.recInterpret and "title" in attributes.keys():
                 self.recInterpret = False
                 self.interpretation = attributes["title"]
+            elif self.rec:
+                self.data[self.CurrentData] = attributes["src"]
 
     def endElement(self, tag):
         if tag == "pod":
@@ -161,11 +163,9 @@ class WolframHandler( xml.sax.ContentHandler ):
             self.recInterpret = False
         self.CurrentData = ""
 
-    def characters(self, content):
-        self.data
-
     def endDocument(self):
-        bracketStrip = re.sub("[\(\[].*?[\)\]]", "", self.interpretation)
-        whiteSpaceStrip = bracketStrip.rstrip()
-        choice = random.choice(["You want the x? Here you go cuck!", "x coming right up cuck:", "x little cuck, just for you:"])
-        self.interpretation = choice.replace("x", whiteSpaceStrip)
+        if self.interpretation != "":
+            bracketStrip = re.sub("[\(\[].*?[\)\]]", "", self.interpretation)
+            whiteSpaceStrip = bracketStrip.rstrip()
+            choice = random.choice(["You want the x? Here you go cuck!", "x coming right up cuck:", "x little cuck, just for you:"])
+            self.interpretation = choice.replace("x", whiteSpaceStrip)
