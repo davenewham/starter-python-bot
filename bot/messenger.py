@@ -110,6 +110,7 @@ class Messenger(object):
         apikey = "77JTTE-3JLXVRWY9P"
 
         query = urllib.quote_plus(query)
+        print("Attempting to query '" + query + "'")
         url = "http://api.wolframalpha.com/v2/query?input=" + query + "&appid=" + apikey
         httpsocket = urllib.urlopen(url)
         httpbody = httpsocket.read()
@@ -119,7 +120,7 @@ class Messenger(object):
         parser.setFeature(xml.sax.handler.feature_namespaces, 0)
         Handler = WolframHandler()
         xml.sax.parseString(httpbody, Handler)
-        
+
         if Handler.interpretation != "":
             self.send_message(channel_id, Handler.interpretation)
         attachment = {
