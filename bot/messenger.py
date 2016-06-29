@@ -1,6 +1,7 @@
 import logging
 import random
 import urllib
+import urllib.request
 import math
 import xml.sax
 import re
@@ -156,4 +157,7 @@ class WolframHandler( xml.sax.ContentHandler ):
         self.data
 
     def endDocument(self):
-        self.interpretation = random.choice(["You want x? Here you go:", "x coming right up:", "x little cuck, just for you:"]).replace("x", re.sub("[\(\[].*?[\)\]]", "", self.interpretation).rstrip())
+        bracketStrip = re.sub("[\(\[].*?[\)\]]", "", self.interpretation)
+        whiteSpaceStrip = bracketStrip.rstrip()
+        choice = random.choice(["You want x? Here you go:", "x coming right up:", "x little cuck, just for you:"])
+        self.interpretation = choice.replace("x", whiteSpaceStrip)
