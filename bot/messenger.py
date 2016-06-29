@@ -109,14 +109,10 @@ class Messenger(object):
         #Do not overuse this - Limited to 2000 requests/per month
         apikey = "77JTTE-3JLXVRWY9P"
 
-        debug = ""
-        for c in query:
-            debug = debug + " " + c 
-
-        query = query.replace("@spagbot:", "")
-        query = query.replace("@spagbot", "")
+        query = query.replace("<@U1ARZ5PQS>:", "")
+        query = query.replace("<@U1ARZ5PQS>", "")
         query = query.lstrip()
-        self.send_message(channel_id, debug)
+        self.send_message(channel_id, query)
         query = urllib.quote_plus(query)
         self.send_message(channel_id, query)
 
