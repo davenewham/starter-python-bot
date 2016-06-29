@@ -1,6 +1,7 @@
 import time
 import logging
 import traceback
+import sys
 
 from slack_clients import SlackClients
 from messenger import Messenger
@@ -33,6 +34,8 @@ class SlackBot(object):
         Args:
             resource (dict of Resource JSON): See message payloads - https://beepboophq.com/docs/article/resourcer-api
         """
+
+        logger.debug("Python Version: " + sys.version)
         logger.debug('Starting bot for resource: {}'.format(resource))
         if 'resource' in resource and 'SlackBotAccessToken' in resource['resource']:
             res_access_token = resource['resource']['SlackBotAccessToken']
