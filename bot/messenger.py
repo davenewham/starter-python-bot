@@ -112,15 +112,12 @@ class Messenger(object):
         query = query.replace("<@U1ARZ5PQS>:", "")
         query = query.replace("<@U1ARZ5PQS>", "")
         query = query.lstrip()
-        self.send_message(channel_id, query)
         query = urllib.quote_plus(query)
-        self.send_message(channel_id, query)
 
         url = "http://api.wolframalpha.com/v2/query?input=" + query + "&appid=" + apikey
         httpsocket = urllib.urlopen(url)
         httpbody = httpsocket.read()
         httpsocket.close()
-        self.send_message(channel_id, str(len(httpbody)))
 
         parser = xml.sax.make_parser()
         parser.setFeature(xml.sax.handler.feature_namespaces, 0)
@@ -170,5 +167,5 @@ class WolframHandler( xml.sax.ContentHandler ):
     def endDocument(self):
         bracketStrip = re.sub("[\(\[].*?[\)\]]", "", self.interpretation)
         whiteSpaceStrip = bracketStrip.rstrip()
-        choice = random.choice(["You want x? Here you go:", "x coming right up:", "x little cuck, just for you:"])
+        choice = random.choice(["You want the x? Here you go cuck!", "x coming right up cuck:", "x little cuck, just for you:"])
         self.interpretation = choice.replace("x", whiteSpaceStrip)
