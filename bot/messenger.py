@@ -119,7 +119,7 @@ class Messenger(object):
         httpsocket = urllib.urlopen(url)
         httpbody = httpsocket.read()
         httpsocket.close()
-        self.send_message(channel_id, str(len(httpbody))
+        self.send_message(channel_id, str(len(httpbody)))
 
         parser = xml.sax.make_parser()
         parser.setFeature(xml.sax.handler.feature_namespaces, 0)
