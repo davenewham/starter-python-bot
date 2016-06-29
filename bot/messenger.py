@@ -133,7 +133,7 @@ class Messenger(object):
                 "fallback": key,
                 "image_url": value,
             }
-        self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
+            self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
 
 class WolframHandler( xml.sax.ContentHandler ):
     def __init__(self):
