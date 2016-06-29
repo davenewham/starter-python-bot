@@ -135,6 +135,9 @@ class Messenger(object):
             }
             self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
 
+        if not Handler.data:
+            self.send_message(channel_id, random.choice(["I haven't got a fucking clue","Why do you expect me to know cuck?","Can't be arsed","I don't know, I will ask ur mum"]))
+
 class WolframHandler( xml.sax.ContentHandler ):
     def __init__(self):
         self.CurrentData = ""
