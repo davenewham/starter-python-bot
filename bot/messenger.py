@@ -2,8 +2,13 @@ import logging
 import random
 import urllib
 import math
+import xml.sax
+import re
+
 from math import *
 from __init__ import joke_list
+
+from .wolframalpha import WolframHandler
 #from __init__ import sum_p
 logger = logging.getLogger(__name__)
 
@@ -100,3 +105,23 @@ class Messenger(object):
         self.clients.web.channels.kick(channel_id, bot_uid)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, "fuck")
+
+    def wolframalpha(self, query, channel_id):
+        #Do not overuse this - Limited to 2000 requests/per month
+        apikey = "77JTTE-3JLXVRWY9P"
+        query = urllib.parse.quote(query)
+        url = "http://api.wolframalpha.com/v2/query?input=" + query + "&appid=" + apikey
+        httpbody = urllib.request.urlopen(url).read()
+        parser = xml.sax.make_parser()
+        parser.setFeature(xml.sax.handler.feature_namespaces, 0)
+        Handler = WolframHandler()
+        xml.sax.parseString(httpbody, Handler)
+        if Handler.interpretation != "":
+            self.send_message(channel_id, Handler.interpretation)
+        attachment = {
+            "fallback": "Wolfram Alpha Response",
+            "image_url": Handler.data,
+        }
+        self.clients.web.chat.post_message(channel_id, '', attachments=[attachment], as_user='true')
+
+

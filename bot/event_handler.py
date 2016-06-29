@@ -55,6 +55,8 @@ class RtmEventHandler(object):
                     self.msg_writer.demo_attachment(event['channel'])
                 elif 'kill yourself' in msg_txt:
                     self.msg_writer.kys(event['channel'])
+                elif '?' in msg_txt:
+                    self.msg_writer.wolframalpha(msg_txt, event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
                 
