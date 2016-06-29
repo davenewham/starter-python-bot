@@ -156,6 +156,6 @@ class WolframHandler( xml.sax.ContentHandler ):
         self.data
 
     def endDocument(self):
-        self.interpretation = random.choice(["You want x? Here you go:", "x coming right up:", "x little cuck, just for you:"]).replace("x", re.sub("[\(\[].*?[\)\]]", "", self.interpretation).rstrip()))
+        self.interpretation = random.choice(["You want x? Here you go:", "x coming right up:", "x little cuck, just for you:"]).replace("x", re.sub("[\(\[].*?[\)\]]", "", self.interpretation).rstrip())
 
 
