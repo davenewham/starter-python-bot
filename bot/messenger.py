@@ -112,6 +112,7 @@ class Messenger(object):
         query = query.replace("@spagbot:", "")
         query = query.replace("@spagebot", "")
         query = query.lstrip()
+        self.send_message(channel_id, query)
         query = urllib.quote_plus(query)
         self.send_message(channel_id, query)
 
