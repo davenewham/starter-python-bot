@@ -149,7 +149,7 @@ class WolframHandler( xml.sax.ContentHandler ):
             self.CurrentData = attributes["title"]
             if attributes["title"] == "Input interpretation":
                 self.recInterpret = True
-            self.rec = true
+            self.rec = True
         if tag == "img":
             if self.recInterpret and "title" in attributes.keys():
                 self.recInterpret = False
