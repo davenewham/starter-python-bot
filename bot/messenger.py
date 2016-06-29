@@ -109,13 +109,17 @@ class Messenger(object):
         #Do not overuse this - Limited to 2000 requests/per month
         apikey = "77JTTE-3JLXVRWY9P"
 
+        query = query.replace("@spagbot:", "")
+        query = query.replace("@spagebot", "")
+        query = query.lstrip()
+        query = urllib.quote_plus(query)
         self.send_message(channel_id, query)
-        print("Attempting to query '" + query + "'")
+
         url = "http://api.wolframalpha.com/v2/query?input=" + query + "&appid=" + apikey
         httpsocket = urllib.urlopen(url)
         httpbody = httpsocket.read()
         httpsocket.close()
-        self.send_message(channel_id, len(httpbody))
+        self.send_message(channel_id, str(len(httpbody))
 
         parser = xml.sax.make_parser()
         parser.setFeature(xml.sax.handler.feature_namespaces, 0)
