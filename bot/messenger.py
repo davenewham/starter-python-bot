@@ -127,7 +127,7 @@ class Messenger(object):
         if Handler.interpretation != "":
             self.send_message(channel_id, Handler.interpretation)
 
-        for key, value in Handler.iteritems():
+        for key, value in Handler.data.iteritems():
             self.send_message(channel_id, key)
             attachment = {
                 "fallback": key,
