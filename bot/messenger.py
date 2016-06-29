@@ -108,7 +108,7 @@ class Messenger(object):
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
         apikey = "77JTTE-3JLXVRWY9P"
-        query = urllib.parse.quote(query)
+        query = urllib.quote_plus(query)
         url = "http://api.wolframalpha.com/v2/query?input=" + query + "&appid=" + apikey
         httpbody = urllib.request.urlopen(url).read()
         parser = xml.sax.make_parser()
