@@ -108,13 +108,18 @@ class Messenger(object):
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
         apikey = "77JTTE-3JLXVRWY9P"
+
         query = urllib.quote_plus(query)
         url = "http://api.wolframalpha.com/v2/query?input=" + query + "&appid=" + apikey
-        httpbody = urllib.request.urlopen(url).read()
+        httpsocket = urllib.urlopen(url)
+        httpbody = httpsocket.read()
+        httpsocket.close()
+
         parser = xml.sax.make_parser()
         parser.setFeature(xml.sax.handler.feature_namespaces, 0)
         Handler = WolframHandler()
         xml.sax.parseString(httpbody, Handler)
+        
         if Handler.interpretation != "":
             self.send_message(channel_id, Handler.interpretation)
         attachment = {
