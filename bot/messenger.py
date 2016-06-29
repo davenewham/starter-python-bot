@@ -8,7 +8,7 @@ import re
 from math import *
 from __init__ import joke_list
 
-from .wolframalpha import WolframHandler
+from wolframalpha import WolframHandler
 #from __init__ import sum_p
 logger = logging.getLogger(__name__)
 
