@@ -107,7 +107,7 @@ class Messenger(object):
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
-        apikey = "77JTTE-3JLXVRWY9P"
+        apikey = ""
 
         query = query.replace("<@U1ARZ5PQS>:", "")
         query = query.replace("<@U1ARZ5PQS>", "")
