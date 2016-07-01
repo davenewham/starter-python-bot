@@ -101,7 +101,7 @@ class Messenger(object):
         self.send_message(channel_id, ":solution: goodbuy world, you have been a filthy whore. :solution:")
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, kick)
-        self.clients.web.channels.kick(channel_id, bot_uid)
+        #self.clients.web.channels.kick(channel_id, bot_uid)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, "fuck")
         for x in uList["members"]:
