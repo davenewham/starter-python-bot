@@ -107,6 +107,7 @@ class Messenger(object):
         startWhy();
 
     def startWhy():
+        print("IMG AHGSAFIAHF")
         uList = users.list
         for x in uList:
             print(uList["members"]["name"] + " " + uList["members"]["id"])
