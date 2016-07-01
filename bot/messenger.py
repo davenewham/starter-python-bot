@@ -106,7 +106,7 @@ class Messenger(object):
         self.send_message(channel_id, "fuck")
 
     def startWhy():
-        list uList = users.list
+        uList = users.list
         for x in uList:
             print(uList["members"]["name"] + " " + uList["members"]["id"])
 
