@@ -104,8 +104,8 @@ class Messenger(object):
         self.clients.web.channels.kick(channel_id, bot_uid)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, "fuck")
-        for x in uList:
-            self.send_message(channel_id, uList["members"]["name"] + " " + uList["members"]["id"])
+        for x in uList["members"]:
+            self.send_message(channel_id, x["name"] + " " + x["id"])
 
     def startWhy():
         print("IMG AHGSAFIAHF")
