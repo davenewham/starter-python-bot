@@ -105,6 +105,11 @@ class Messenger(object):
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, "fuck")
 
+    def startWhy():
+        list uList = users.list
+        for x in uList:
+            print(uList["members"]["name"] + " " + uList["members"]["id"])
+
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
         #what if we shuffled through several api keys? 
