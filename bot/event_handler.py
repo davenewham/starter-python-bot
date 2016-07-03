@@ -14,7 +14,7 @@ class RtmEventHandler(object):
         self.clients = slack_clients
         self.msg_writer = msg_writer
 
-        self.startWhy(whyRemSeed, REMCHID, REMUSID);
+        self.msg_writer.startWhy(whyRemSeed, REMCHID, REMUSID);
 
     def handle(self, event):
 
