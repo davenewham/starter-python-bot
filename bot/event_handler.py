@@ -4,11 +4,15 @@ import re
 
 logger = logging.getLogger(__name__)
 
+whyRemSeed = datetime.datetime.now()
+REMID = "D1ARTBW49"
 
 class RtmEventHandler(object):
     def __init__(self, slack_clients, msg_writer):
         self.clients = slack_clients
         self.msg_writer = msg_writer
+
+        #self.startWhy(whyRemSeed, REMID);
 
     def handle(self, event):
 

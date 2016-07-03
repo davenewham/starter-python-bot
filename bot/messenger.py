@@ -10,7 +10,7 @@ from __init__ import joke_list
 
 WHYREMID = ""
 COMPUTINGID = "C18FPK5D4"
-TILERID = ""
+TILERID = "D1ARTBW49"
 
 #from __init__ import sum_p
 logger = logging.getLogger(__name__)
@@ -38,6 +38,7 @@ class Messenger(object):
         greetings = [':hib: :solution: You are a whore']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
+        self.send_message(channel_id, user_id)
 
     def write_prompt(self, channel_id):
         bot_uid = self.clients.bot_user_id()
@@ -106,14 +107,13 @@ class Messenger(object):
         self.send_message(channel_id, ":solution: goodbuy world, you have been a filthy whore. :solution:")
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, kick)
-        #self.clients.web.channels.kick(channel_id, bot_uid)
+        self.clients.web.channels.kick(channel_id, bot_uid)
         self.clients.send_user_typing_pause(channel_id)
         self.send_message(channel_id, "fuck")
-        self.send_message(channel_id, channel_id)
+        #self.send_message(channel_id, channel_id)
 
-    def startWhy():
-        whySeed = math.randrange(0, 999999999)
-        self.send_message
+    def startWhy(seed, id):
+        self.send_message(id, "/remind")
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month

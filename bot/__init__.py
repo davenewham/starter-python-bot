@@ -1,8 +1,9 @@
-fp = open('./resources/Jokes.txt', 'r')
-tmp_str=fp.readline().strip()
 global joke_list
 #global sum_p = 0
 joke_list = []
+
+fp = open('./resources/Jokes.txt', 'r')
+tmp_str=fp.readline().strip()
 
 while tmp_str and tmp_str=="":
   tmp_str = fp.readline().strip()
@@ -21,3 +22,5 @@ while tmp_str:
   joke_list.append(tmp_item)
   tmp_str = fp.readline().strip()
 #sum_p = 100 * len(joke_list)                   	 #because all p values start as 100
+
+
