@@ -4,6 +4,7 @@ import urllib
 import math
 import xml.sax
 import re
+import datetime
 
 from math import *
 from __init__ import joke_list
@@ -113,7 +114,8 @@ class Messenger(object):
         #self.send_message(channel_id, channel_id)
 
     def startWhy(self, seed, chid, usid):
-        self.send_message(chid, "/remind <@" + usid + "> g in 5 seconds")
+        #self.send_message(chid, "/remind <@" + usid + "> g in 5 seconds")
+        self.clients.web.reminders.add("cuck!", 10, usid)
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
