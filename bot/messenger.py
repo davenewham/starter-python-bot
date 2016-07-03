@@ -112,8 +112,8 @@ class Messenger(object):
         self.send_message(channel_id, "fuck")
         #self.send_message(channel_id, channel_id)
 
-    def startWhy(seed, id):
-        self.send_message(id, "/remind")
+    def startWhy(seed, chid, usid):
+        self.send_message(chid, "/remind <@" + usid + "> g in 2 minutes")
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
