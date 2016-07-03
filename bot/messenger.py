@@ -8,8 +8,13 @@ import re
 from math import *
 from __init__ import joke_list
 
+WHYREMID = ""
+COMPUTINGID = "C18FPK5D4"
+TILERID = ""
+
 #from __init__ import sum_p
 logger = logging.getLogger(__name__)
+whySeed = 0
 
 
 class Messenger(object):
@@ -107,9 +112,8 @@ class Messenger(object):
         self.send_message(channel_id, channel_id)
 
     def startWhy():
-        print("IMG AHGSAFIAHF")
-        for x in uList:
-            print(uList["members"]["name"] + " " + uList["members"]["id"])
+        whySeed = math.randrange(0, 999999999)
+        self.send_message
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
