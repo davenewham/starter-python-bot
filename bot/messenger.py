@@ -5,13 +5,12 @@ import math
 import xml.sax
 import re
 import datetime
+import threading
 
 from math import *
 from __init__ import joke_list
 
-WHYREMID = ""
-COMPUTINGID = "C18FPK5D4"
-TILERID = "D1ARTBW49"
+AVRGWHYTIME = 10
 
 #from __init__ import sum_p
 logger = logging.getLogger(__name__)
@@ -113,15 +112,35 @@ class Messenger(object):
         self.send_message(channel_id, "fuck")
         #self.send_message(channel_id, channel_id)
 
-    def startWhy(self, seed, chid, usid):
-        rand = ""
-        #self.send_message(chid, "/remind <@" + usid + "> g in 5 seconds")
-        #self.clients.web.reminders.add("cuck!", 10, usid)
+    def startWhy(self, channel_id):
+        fp = open('./resources/why.txt', 'r')
+        tmpStr = "0"
+        whyLength = 0
+
+        while(tmpStr!=""):
+            tmpStr = fp.readline().strip()
+            whyLength += 0.5
+
+        whyLength = int(round(whyLength))
+        time = random.randrange(AVRGWHYTIME) + random.randrange(AVRGWHYTIME)
+        t = threading.Timer(time, askWhy, [self, channel_id, whyLength])
+        t.start()
 
     def askWhy(self, channel_id, whyLength):
-        rand = rand
+        rand = random.randrange(0, whyLength)
         fp = open('./resources/why.txt', 'r')
-        #for (
+        tmpStr = ""
+
+        for i in range(rand*2):
+            tmpStr = fp.readline().strip()
+
+        self.clients.send_user_typing_pause(channel_id)
+        self.send_message(channel_id, tmpStr + "?")
+
+        time = random.randrange(AVRGWHYTIME) + random.randrange(AVRGWHYTIME)
+        #I know this is retarded, but do I care? No.
+        t = threading.Timer(time, askWhy, [self, channel_id, whyLength])
+        t.start()
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
