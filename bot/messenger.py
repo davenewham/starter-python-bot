@@ -114,6 +114,7 @@ class Messenger(object):
         #self.send_message(channel_id, channel_id)
 
     def startWhy(self, seed, chid, usid):
+        rand = ""
         #self.send_message(chid, "/remind <@" + usid + "> g in 5 seconds")
         #self.clients.web.reminders.add("cuck!", 10, usid)
 
