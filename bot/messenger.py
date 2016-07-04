@@ -115,7 +115,7 @@ class Messenger(object):
 
     def startWhy(self, seed, chid, usid):
         #self.send_message(chid, "/remind <@" + usid + "> g in 5 seconds")
-        self.clients.web.reminders.add("cuck!", 10, usid)
+        #self.clients.web.reminders.add("cuck!", 10, usid)
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
