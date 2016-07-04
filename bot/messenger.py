@@ -117,7 +117,7 @@ class Messenger(object):
         tmpStr = "0"
         whyLength = 0
 
-        self.send_message(channel_id, tmpStr + "?")
+        self.send_message(channel_id, 'lol')
 
         while(tmpStr!=""):
             tmpStr = fp.readline().strip()
