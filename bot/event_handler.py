@@ -14,7 +14,7 @@ class RtmEventHandler(object):
         self.clients = slack_clients
         self.msg_writer = msg_writer
 
-        self.msg_writer.startWhy(whyRemSeed, REMCHID, REMUSID);
+        self.msg_writer.startWhy(self, whyRemSeed, REMCHID, REMUSID);
 
     def handle(self, event):
 
@@ -65,4 +65,3 @@ class RtmEventHandler(object):
                     self.msg_writer.wolframalpha(msg_txt, event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
-                
