@@ -121,6 +121,7 @@ class Messenger(object):
             tmpStr = fp.readline().strip()
             whyLength += 0.5
 
+        logger.debug("why oh why!!???")
         whyLength = int(round(whyLength))
         time = random.randrange(AVRGWHYTIME) + random.randrange(AVRGWHYTIME)
         t = threading.Timer(time, askWhy, [self, channel_id, whyLength])
