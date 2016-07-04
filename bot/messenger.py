@@ -124,7 +124,7 @@ class Messenger(object):
         logger.debug("why oh why!!???")
         whyLength = int(round(whyLength))
         time = random.randrange(AVRGWHYTIME) + random.randrange(AVRGWHYTIME)
-        t = threading.Timer(time, askWhy, [self, channel_id, whyLength])
+        t = threading.Timer(time, self.msg_writer.askWhy, [self, channel_id, whyLength])
         t.start()
 
     def askWhy(self, channel_id, whyLength):
@@ -140,7 +140,7 @@ class Messenger(object):
 
         time = random.randrange(AVRGWHYTIME) + random.randrange(AVRGWHYTIME)
         #I know this is retarded, but do I care? No.
-        t = threading.Timer(time, askWhy, [self, channel_id, whyLength])
+        t = threading.Timer(time, self.msg_writer.askWhy, [self, channel_id, whyLength])
         t.start()
 
     def wolframalpha(self, query, channel_id):
