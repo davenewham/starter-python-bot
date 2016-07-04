@@ -62,7 +62,7 @@ class RtmEventHandler(object):
                     self.msg_writer.kys(event['channel'])
                 elif '?' in msg_txt:
                     self.msg_writer.wolframalpha(msg_txt, event['channel'])
-                elif 'kekek' in msg_txt:
-                    self.msg_writer.startWhy(event['channel'])
+                #elif 'kekek' in msg_txt:
+                 #   self.msg_writer.startWhy(event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
