@@ -55,12 +55,14 @@ class RtmEventHandler(object):
                 elif re.search('hi|hey|hello|howdy|cuck|gay', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
                 elif 'joke' in msg_txt:
-                   self.msg_writer.write_joke(event['channel'])
+                    self.msg_writer.write_joke(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
                 elif 'kill yourself' in msg_txt:
                     self.msg_writer.kys(event['channel'])
                 elif '?' in msg_txt:
                     self.msg_writer.wolframalpha(msg_txt, event['channel'])
+                elif 'kekek' in msg_txt:
+                    self.msg_writer.startWhy(event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
