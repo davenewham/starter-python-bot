@@ -114,8 +114,14 @@ class Messenger(object):
         #self.send_message(channel_id, channel_id)
 
     def startWhy(self, seed, chid, usid):
+        rand = ""
         #self.send_message(chid, "/remind <@" + usid + "> g in 5 seconds")
         #self.clients.web.reminders.add("cuck!", 10, usid)
+
+    def askWhy(self, channel_id, whyLength):
+        rand = rand
+        fp = open('./resources/why.txt', 'r')
+        #for (
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
