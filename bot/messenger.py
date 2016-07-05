@@ -145,12 +145,7 @@ class Messenger(object):
 
     def wolframalpha(self, query, channel_id):
         #Do not overuse this - Limited to 2000 requests/per month
-<<<<<<< HEAD
-        #what if we shuffled through several api keys? 
-        apikey = ""
-=======
         apikey = "77JTTE-3JLXVRWY9P"
->>>>>>> parent of 8e8a5ba... efee
 
         query = query.replace("<@U1ARZ5PQS>:", "")
         query = query.replace("<@U1ARZ5PQS>", "")
