@@ -52,6 +52,8 @@ class RtmEventHandler(object):
                     self.msg_writer.write_help_message(event['channel'])
                 elif 'latex' in msg_txt:
                     self.msg_writer.latex_equation(event['channel'], msg_txt)
+                elif 'across' in msg_txt:
+                     self.msg_writer.across(event['channel'], msg_txt)
                 elif re.search('hi|hey|hello|howdy|cuck|gay', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
                 elif 'joke' in msg_txt:
