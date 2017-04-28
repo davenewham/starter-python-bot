@@ -73,6 +73,13 @@ class Messenger(object):
         txt = "a fucking :hib: error! what a surprise:\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
 
+    def across(self, channel_id, msg_text):
+        mess = msg_text
+        for i in msg_text:
+            txt = i
+            self.send_message(channel_id, txt)
+        
+        
     def demo_attachment(self, channel_id):
         txt = "Beep Beep Boop is a ridiculously simple hosting platform for your Slackbots."
         attachment = {
